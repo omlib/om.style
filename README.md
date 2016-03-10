@@ -1,2 +1,2 @@
 
-# Om.style
+# OM|STYLE

@@ -1,0 +1,37 @@
+
+//@import "../mixins";
+@import "../shapes";
+@import "global";
+@import "../animation/rotate";
+
+.ball-rotate( @size:15px, @color:#000, @animation-duration:1s ) {
+
+    position: relative;
+
+    > div {
+
+        position: relative;
+        .circle( @size, @color );
+        .loader-animation;
+
+        &:first-child {
+            animation: rotate @animation-duration 0s cubic-bezier(.7,-.13,.22,.86) infinite;
+        }
+
+        &:before, &:after {
+            position: absolute;
+            content: "";
+            .circle( @size, @color );
+        }
+
+        &:before {
+            top: 0;
+            left: -@size*2;
+        }
+
+        &:after {
+            top: 0px;
+            left: @size*2;
+        }
+    }
+}
