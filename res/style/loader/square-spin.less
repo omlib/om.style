@@ -1,5 +1,5 @@
 
-@import "global";
+@import "loader";
 
 @keyframes square-spin {
     25% {
@@ -17,11 +17,16 @@
 }
 
 .square-spin ( @size, @color:#000, @animation-duration:1s ) {
-    > div {
+
+	> div {
+
         .loader-animation;
+
         width: @size;
         height: @size;
+
         background: @color;
+
         animation: square-spin @animation-duration 0s cubic-bezier(.09,.57,.49,.9) infinite;
     }
 }

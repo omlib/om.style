@@ -1,14 +1,14 @@
 
 //@import "../mixins";
+@import "../animation/basic/rotate";
 @import "../shapes";
-@import "global";
-@import "../animation/rotate";
+@import "loader";
 
 .ball-rotate( @size:15px, @color:#000, @animation-duration:1s ) {
 
     position: relative;
 
-    > div {
+	> div {
 
         position: relative;
         .circle( @size, @color );
@@ -26,12 +26,12 @@
 
         &:before {
             top: 0;
-            left: -@size*2;
+            left: -@size * 2;
         }
 
         &:after {
             top: 0px;
-            left: @size*2;
+            left: @size * 2;
         }
     }
 }
