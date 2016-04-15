@@ -14,23 +14,31 @@
 body {
     margin: 0;
     padding: 20px 20px 20px 40px;
+	font-family: Helvetica;
     background: #fafafa;
     color: #444;
     overflow:hidden;
 }
 
+a {
+	text-decoration: none;
+	color: #444;
+}
+a:hover {
+	text-decoration: underline;
+}
+
 #random-content {
     z-index: 1;
-
     position: relative;
     top: 50px;
-
     line-height: 240px;
-
     font-size: 240px;
     font-family: Helvetica;
-
     letter-spacing: -26px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	cursor: default;
 }
 
 #controls {
@@ -58,4 +66,14 @@ body {
     pointer-events: none;
 
     .vignette( 100px, 100px, 200px, rgba(0,0,0,0.3) );
+}
+
+footer {
+
+	z-index: 1000;
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
 }
