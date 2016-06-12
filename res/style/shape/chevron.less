@@ -1,0 +1,37 @@
+
+.shape-chevron( @size, @color ) {
+    position: relative;
+    text-align: center;
+    padding: @size / 50 * 6; //12px;
+    margin-bottom: 6px;
+    height: @size * 0.6;
+    width: @size;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 51%;
+        background: @color;
+        -webkit-transform: skew(0deg, 6deg);
+        -moz-transform: skew(0deg, 6deg);
+        -ms-transform: skew(0deg, 6deg);
+        -o-transform: skew(0deg, 6deg);
+        transform: skew(0deg, 6deg);
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background: @color;
+        -webkit-transform: skew(0deg, -6deg);
+        -moz-transform: skew(0deg, -6deg);
+        -ms-transform: skew(0deg, -6deg);
+        -o-transform: skew(0deg, -6deg);
+        transform: skew(0deg, -6deg);
+    }
+}

@@ -1,0 +1,21 @@
+
+.shape-base( @size, @color ) {
+    position: relative;
+    width: @size;
+    height: @size/2 + (@size/20);
+    margin-top: @size/2 + (@size/20);
+    margin-left: @size/5;
+    display: inline-block;
+    background: @color;
+    &:before {
+        position: absolute;
+        top: -(@size/20*7);
+        left: 0;
+        width: 0;
+        height: 0;
+        content: "";
+        border-bottom: @size/20*7 solid @color;
+        border-left: @size/2 solid transparent;
+        border-right: @size/2 solid transparent;
+    }
+}

@@ -1,0 +1,59 @@
+
+.shape-triangle( @size ) {
+	width: 0;
+	height: 0;
+	//border-left: @size solid transparent;
+	//border-right: @size solid transparent;
+}
+
+.shape-triangle-up( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-left: @size solid transparent;
+	border-right: @size solid transparent;
+	border-bottom: @size*2 solid @color;
+}
+
+.shape-triangle-down( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-left: @size solid transparent;
+	border-right: @size solid transparent;
+	border-top: @size*2 solid @color;
+}
+
+.shape-triangle-left( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-top: @size solid transparent;
+	border-bottom: @size solid transparent;
+	border-right: @size*2 solid @color;
+}
+
+.shape-triangle-right( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-top: @size solid transparent;
+	border-bottom: @size solid transparent;
+	border-left: @size*2 solid @color;
+}
+
+.shape-triangle-tl( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-top: @size*2 solid @color;
+	border-right: @size*2 solid transparent;
+}
+
+.shape-triangle-tr( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-top: @size*2 solid @color;
+	border-left: @size*2 solid transparent;
+}
+
+.shape-triangle-bl( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-bottom: @size*2 solid @color;
+	border-right: @size*2 solid transparent;
+}
+
+.shape-triangle-br( @size, @color:#000 ) {
+	.shape-triangle( @size );
+	border-bottom: @size*2 solid @color;
+	border-left: @size*2 solid transparent;
+}

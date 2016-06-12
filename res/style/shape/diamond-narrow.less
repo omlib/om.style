@@ -1,0 +1,18 @@
+
+.shape-diamond-narrow(@size,@color) {
+	width: 0;
+	height: 0;
+	border: @size/2 solid transparent;
+	border-bottom: @size*0.7 solid @color;
+	position: relative;
+	top: -(@size/2);
+	&:after {
+		content: '';
+		position: absolute;
+		left: -(@size/2) top @size*0.7;
+		width: 0;
+		height: 0;
+		border: @size/2 solid transparent;
+		border-top: @size*0.7 solid @color;
+	}
+}

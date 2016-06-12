@@ -1,0 +1,16 @@
+
+.shape-cross(@size,@color) {
+    position: relative;
+    width: @size/5;
+    height: @size;
+    background: @color;
+    &:after {
+        position: absolute;
+        top: @size*0.4;
+        left: -(@size*0.4); //-40px;
+        width: @size;
+        height: @size/5;
+        content: "";
+        background: @color;
+    }
+}

@@ -1,0 +1,18 @@
+
+.shape-diamond-shield(@size,@color) {
+	width: 0;
+	height: 0;
+	border: @size solid transparent;
+	border-bottom: @size/5 solid @color;
+	position: relative;
+	top: -@size;
+	&:after {
+		content: '';
+		position: absolute;
+		left: -@size top @size/5;
+		width: 0;
+		height: 0;
+		border: @size solid transparent;
+		border-top: @size*0.7 solid @color;
+	}
+}

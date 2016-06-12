@@ -1,0 +1,33 @@
+
+.shape-yinyang(@size,@borderthick,@colorA,@colorB) {
+	position: relative;
+	width: @size - @borderthick;
+	height: (@size/2) - (@borderthick/2);
+	background: @colorB;
+	border-color: @colorA;
+	border-style: solid;
+	border-width: @borderthick/2 @borderthick/2 @size/2 @borderthick/2;
+	border-radius: 100%;
+	&:before {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 12px;
+		height: 12px;
+		content: "";
+		background: @colorB;
+		border: (@borderthick*@borderthick+(@borderthick/2)) solid @colorA;
+		border-radius: 100%;
+	}
+	&:after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: @borderthick*3;
+		height: @borderthick*3;
+		content: "";
+		background: @colorA;
+		border: (@borderthick*@borderthick+(@borderthick/2)) solid @colorB;
+		border-radius: 100%;
+	}
+}

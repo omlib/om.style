@@ -1,0 +1,34 @@
+
+.shape-badge-ribbon( @size, @color:#000 ) {
+    position: relative;
+    background: @color;
+    height: @size;
+    width: @size;
+    -moz-border-radius:    @size/2;
+    -webkit-border-radius: @size/2;
+    border-radius:         @size/2;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        border-bottom: @size*0.7 solid @color;
+        border-left: @size*0.4 solid transparent;
+        border-right: @size*0.4 solid transparent;
+        top: @size*0.7; //70px;
+        left: -(@size/10); //-10px;
+        -webkit-transform: rotate(-140deg);
+        -moz-transform:    rotate(-140deg);
+        -ms-transform:     rotate(-140deg);
+        -o-transform:      rotate(-140deg);
+        transform:      rotate(-140deg);
+    }
+    &:after {
+        left: auto;
+        right: -(@size/10);// -10px;
+        -webkit-transform: rotate(140deg);
+        -moz-transform:    rotate(140deg);
+        -ms-transform:     rotate(140deg);
+        -o-transform:      rotate(140deg);
+        transform:      rotate(140deg);
+    }
+}

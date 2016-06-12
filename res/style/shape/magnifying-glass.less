@@ -1,0 +1,25 @@
+
+.shape-magnifying-glass(@size,@color) {
+    font-size: 10em; /* This controls the size. */
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    border: 0.1em solid @color;
+    position: relative;
+    border-radius: 0.35em;
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        right: -0.25em;
+        bottom: -0.1em;
+        border-width: 0;
+        background: @color;
+        width: 0.35em;
+        height: 0.08em;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+    }
+}

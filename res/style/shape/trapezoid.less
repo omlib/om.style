@@ -1,0 +1,17 @@
+
+//TODO
+
+.shape-trapezoid( @width, @height, @factor:2, @color:#000 ) {
+	/*
+	width: @width;
+	height: 0;
+	border-bottom: @height*2 solid @color;
+	border-left: @width/4/2 solid transparent;
+	border-right: @width/4/2 solid transparent;
+	*/
+	width: @width / (@factor);
+	height: 0;
+	border-bottom: @height solid @color;
+	border-left: @width/@factor solid transparent;
+	border-right: @width/@factor solid transparent;
+}

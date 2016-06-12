@@ -1,0 +1,34 @@
+
+.shape-infinity(@width,@height,@color){
+    position: relative;
+    width: @width;
+    height: @height;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: @height * 0.6;
+        height: @height * 0.6;
+        border: 20px solid @color;
+        -moz-border-radius: @height @height 0 @height;
+        border-radius: @height @height 0 @height;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    &:after {
+        left: auto;
+        right: 0;
+        -moz-border-radius: @height @height @height 0;
+        border-radius: @height @height @height 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}

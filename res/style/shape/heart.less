@@ -1,0 +1,41 @@
+
+.shape-heart(@size,@color) {
+    position: relative;
+    width: @size;
+    height: @size * 0.9;
+    &:before,
+    &:after {
+        position: absolute;
+        top: 0;
+        left: @size/2;
+        width: @size/2;
+        height: @size * 0.8;
+        content: "";
+        background: @color;
+        -moz-border-radius: @size/2 @size/2 0 0;
+        border-radius: @size/2 @size/2 0 0;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+    }
+    &:after {
+        left: 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+        -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        -o-transform-origin: 100% 100%;
+        transform-origin :100% 100%;
+    }
+}

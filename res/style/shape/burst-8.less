@@ -1,0 +1,27 @@
+
+.shape-burst-8( @size, @color ) {
+    background: @color;
+    width: @size/5*4;
+    height: @size/5*4;;
+    position: relative;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20eg);
+    transform: rotate(20eg);
+     &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: @size/5*4;;
+        width: @size/5*4;;
+        background: @color;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+}
