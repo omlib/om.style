@@ -1,3 +1,5 @@
 _*
-*.css
-TODO*
+data/
+doc/
+examples**/app*
+test/unit*
