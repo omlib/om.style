@@ -41,8 +41,10 @@ typedef Params = {
 /**
 	Less compiler wrapper.
 */
-class LessC {
+class LessCompiler {
 
+	/**
+	*/
 	public static function getArgs( ?params : Params ) : Array<String> {
 		var args = new Array<String>();
 		if( params != null ) {
@@ -55,8 +57,8 @@ class LessC {
 			if( params.silent ) args.push( '--silent' );
 			if( params.strict_imports ) args.push( '--strict_imports' );
 			if( params.insecure ) args.push( '--insecure' );
-			if( params.compress ) args.push( '--compress' );
-			if( params.clean ) args.push( '--clean' );
+			//if( params.compress ) args.push( '--compress' );
+			//if( params.clean ) args.push( '--clean' );
 			//if( params.clean_options )
 			if( params.source_map != null ) args.push( '--source-map' );
 			if( params.source_map_rootpath != null ) args.push( '--source-map-rootpath=' + params.source_map_rootpath );
@@ -94,8 +96,9 @@ class LessC {
 
 	#if sys
 
-	public static function compile( str : String, ?params : Params ) : String {
+	public static function compile( str : String, ?params : Params, ?extraArgs : Array<String> ) : String {
 		var args = getArgs( params ).add( '-' );
+		if( extraArgs != null ) args = args.concat( extraArgs );
 		var lessc = new Process( 'lessc', args );
 		lessc.stdin.writeString( str );
         var e = lessc.stderr.readAll().toString();
@@ -106,8 +109,9 @@ class LessC {
         return null;
 	}
 
-	public static function compileFile( src : String, dst : String, ?params : Params ) : String {
+	public static function compileFile( src : String, dst : String, ?params : Params, ?extraArgs : Array<String> ) : String {
 		var args = getArgs( params ).append( [ src, dst ] );
+		if( extraArgs != null ) args = args.concat( extraArgs );
 		return execute( args );
 		/*
 		var lessc = new Process( 'lessc', args );
