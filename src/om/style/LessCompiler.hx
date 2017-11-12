@@ -4,7 +4,7 @@ package om.style;
 import sys.io.Process;
 #end
 
-using om.util.ArrayUtil;
+using om.ArrayTools;
 
 typedef LessVar = {
 	name : String,
