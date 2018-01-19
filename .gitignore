@@ -1,5 +1,4 @@
 _*
-data/
 doc/
-examples**/app*
-test/unit*
+example**/app*
+test/bin/
